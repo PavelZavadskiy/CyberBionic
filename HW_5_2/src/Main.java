@@ -4,6 +4,7 @@
  */
 public class Main {
     public static void main(String[] args) {
+
         Zoo zoo = new Zoo();
         Zoo.Statuses status;
         status = zoo.add(0, "Cat");
