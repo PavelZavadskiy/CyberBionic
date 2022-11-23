@@ -10,6 +10,7 @@
 
 /*
  * Змінив сортування на лямбда
+ * Змінив вивод на консоль через forEach
  * */
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -43,16 +44,12 @@ public class Main {
                 break;
 
             System.out.println("_____________Before sort_____________");
-            for (Worker elem : workers) {
-                System.out.println(elem);
-            }
+            workers.forEach(elem -> System.out.println(elem));
 
             workers.sort((o1, o2) -> o1.getFio().compareTo(o2.getFio()));
 
             System.out.println("_____________After sort_____________");
-            for (Worker elem : workers) {
-                System.out.println(elem);
-            }
+            workers.forEach(elem -> System.out.println(elem));
 
             System.out.println("_____________Show with experience______________");
 
@@ -62,10 +59,9 @@ public class Main {
             LocalDate current_date = LocalDate.now();
             int current_Year = current_date.getYear();
 
-            for (Worker elem : workers) {
-                if ((current_Year - Integer.parseInt(elem.getYearOfEmployment())) > experience)
-                    System.out.println(elem);
-            }
+            workers.forEach(elem -> {if ((current_Year - Integer.parseInt(elem.getYearOfEmployment())) > experience)
+                                    System.out.println(elem);});
+
         }while (false);
     }
 }
